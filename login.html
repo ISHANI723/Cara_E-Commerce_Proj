@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara-E-Commerce Website</title>
+
+    <style>
+        .container{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e1e2ec;
+            column-gap: 35px;
+        }
+        .form{
+            position: relative;
+            background: white;
+            border-radius: 8px;
+            max-width: 420px;
+            width: 100%;
+            padding: 30px;
+        }
+        header{
+            font-size: 26px;
+            font-weight: 600;
+            color: black;
+            text-align: center;
+        }
+        
+        form{
+            margin-top: 25px;
+        } 
+
+        .form .field{
+            height: 40px;
+            width: 100%;
+            margin-top: 20px;
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .field input,
+        .field button{
+            height: 100%;
+            width: 100%;
+            border: none;
+            font-size: 15px;
+            font-weight: 400;
+            border-radius: 6px;
+        }
+
+        .field input{
+            outline: none;
+            border: 1px solid #cacaca;
+            padding: 0 15px;
+        }
+        .field input:focus{
+            border-bottom-width: 2px;
+        }
+        .eye-icon{
+            font-size: 16px;
+            color: #8b8b8b;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 5px;
+        }
+        .field button{
+            background-color: #0171d3;
+            color: #FFF;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .field button:hover{
+            background-color: #016dcb;
+        }
+        .form-link{
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .form-link span,
+        .form-link a{
+            font-size: 14px;
+            font-weight: 400;
+            color: #232836;
+        }
+
+        .form a{
+            text-decoration: none;
+            color: #0171d3;
+        }
+        .form-content a:hover{
+            text-decoration: underline;
+        }
+
+        .line{
+            height: 1px;
+            width: 100%;
+            position: relative;
+            background-color: #d4d4d4;
+            margin: 36px 0;
+        }
+        .line::before{
+            content:'Or';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #FFF;
+            color: #8b8b8b;
+            padding: 0 15px;
+        }
+
+        .media-options a{
+            display: flex;
+            background-color: #4267b2;
+            align-items: center;
+            justify-content: center;
+        }
+
+        a.facebook{
+            background-color: #4267b2;
+            color: #FFF;
+            position: relative;
+        }
+        a.facebook .facebook-icon{
+            height: 28px;
+            width: 28px;
+            background-color: #FFF;
+            color: #0171d3;
+            font-size: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .facebook-icon,
+        img.google-img{
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+        }
+
+        img.google-img{
+            height: 20px;
+            width: 20px;
+            object-fit: cover;
+        }
+        a.google{
+            border: 1px solid #cacaca;
+            background-color: #FFF;
+            color: #8b8b8b;
+            position: relative;
+        }
+        a.google span{
+            color: #232836;
+            font-weight: 500;
+            opacity: 0.6;
+        }
+
+        @media screen and (max-width: 400px){
+            .form{
+                padding: 15px 10px;
+            }
+        }
+    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!--Boxicons Link-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+    <!-- Header Section -->
+    <section id="header">
+        <a href="#"><img src="assets/images/logo.png" class="logo" alt=""></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="login.html">Home</a></li>
+                <li><a href="login.html">Shop</a></li>
+                <li><a href="login.html">Blog</a></li>
+                <li><a href="login.html">About Us</a></li>
+                <!-- <li><a href="contact.html">Contact Us</a></li> -->
+                <li><a href="login.html"><i class='bx bx-shopping-bag'></i></a></li>
+                <!-- CART  -->
+                <!-- LOGIN FORM - PHP & MySQL
+                REGISTRATION FORM-PHP & MySQL -->
+            </ul>
+        </div>
+    </section>
+
+    <section class="container forms">
+        <!--LOGIN FORM-->
+        <div class="form login">
+            <div class="form-content">
+                <header>Login</header>
+
+                <form action="login.php" method="POST">
+                    <!--Email box-->
+                    <div class="field input-field">
+                        <input type="email" name="email" placeholder="Email" class="input">
+                    </div>
+                    <!--Password box-->
+                    <div class="field input-field">
+                        <input type="password" name="password" placeholder="Password" class="password">
+                        <i class='bx bxs-hide eye-icon'></i>
+                    </div>
+
+                    <div class="form-link">
+                        <a href="#" class="forgot-passowrd">Forgot password?</a>
+                    </div>
+
+                    <div class="field button-field">
+                        <button>Login</button>
+                    </div>
+                </form>
+                <div class="form-link">
+                    <span>Don't have an account? <a href="register.html" class="link signup-link">Signup</a> </span>
+                </div>
+            </div>
+
+            <div class="line"></div>
+            <div class="media-options">
+                <a href="#" class="field facebook">
+                    <i class='bx bxl-facebook facebook-icon' ></i>
+                    <span>Login with Facebook</span>
+                </a>
+            </div>
+
+            <div class="media-options">
+                <a href="#" class="field google">
+                    <img src="assets/images/google.webp" alt="" class="google-img">
+                    <span>Login with Google</span>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <p class="space"></p>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="assets/images/logo.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 52 Wellington Road, Street 40, Bangalore.</p>
+            <p><strong>Phone:</strong> +91-7845738991</p>
+            <p><strong>Hours:</strong> 10:00 - 17:00, Monday - Saturday</p>
+        </div>
+        <div class="follow">
+            <h4>Follow Us</h4>
+            <div class="icon">
+                <i class='bx bxl-facebook'></i>
+                <i class='bx bxl-twitter' ></i>
+                <i class='bx bxl-instagram' ></i>
+                <i class='bx bxl-pinterest-alt' ></i>
+                <i class='bx bxl-youtube' ></i>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play Store.</p>
+            <div class="row">
+                <img src="assets/images/pay/app.jpg" alt="">
+                <img src="assets/images/pay/play.jpg" alt="">
+            </div>
+            <p>Secure Payment Gateways</p>
+            <img src="assets/images/pay/pay.png" alt="">
+        </div>
+        <div class="copyright">
+            <p style="color: black;"><strong>&copy; 2024 Cara. All rights reserved.</strong></p>
+            <p style="color: rgb(26, 21, 21);"><strong>PROJECT BY ISHANI BHONGALE</strong>  </p>
+        </div>
+        
+    </footer>
+    
+    <script>
+        const forms = document.querySelector(".forms"),
+        pwShowHide = document.querySelectorAll(".eye-icon"),
+        links = document.querySelectorAll(".link");
+
+        pwShowHide.forEach(eyeIcon => {
+            eyeIcon.addEventListener("click", () => {
+                let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+                
+                pwFields.forEach(password => {
+                    if(password.type === "password"){
+                        password.type = "text";
+                        eyeIcon.classList.replace("bxs-hide", "bxs-show");
+                        return;
+                    }
+                    password.type = "password";
+                    eyeIcon.classList.replace("bxs-show", "bxs-hide");
+                })
+            })
+        })
+    </script>
+    <script src="assets/script.js"></script>
+</body>
+</html>
